@@ -16,7 +16,7 @@ import * as FusionCharts from 'fusioncharts';
 import { FusionChartsModule } from 'angular-fusioncharts';
 import * as FusionMaps from "fusionmaps/fusioncharts.maps";
 import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
-import * as India from 'fusioncharts/maps/fusioncharts.india';
+import * as India from '../../fusioncharts.india';
 import { HeatmapComponent } from './heatmap/heatmap.component';
 import { SymptomsComponent } from './symptoms/symptoms.component';
 import { TestingComponent } from './testing/testing.component';
