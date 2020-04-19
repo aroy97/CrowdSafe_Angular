@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
+    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript webpack-dev-server",
     "postinstall": "ng build --aot --prod"
   },
   "engines": {
@@ -30,6 +30,7 @@
     "@types/googlemaps": "^3.39.3",
     "angular-fusioncharts": "^3.0.4",
     "bootstrap": "^4.4.1",
+    "express": "^4.14.1",
     "font-awesome": "^4.7.0",
     "fusioncharts": "^3.15.1-sr.1",
     "fusionmaps": "^3.15.1",
