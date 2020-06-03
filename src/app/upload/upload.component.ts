@@ -32,6 +32,7 @@ export class UploadComponent implements OnInit {
   user: string;
   successMsg: string;
   successFlag: boolean = false;
+  tokens: number;
 
   constructor(
     public appservice: AppService,
@@ -52,6 +53,7 @@ export class UploadComponent implements OnInit {
       else{
         this.subscribeservice.token.subscribe((tok: number) => {
           // tok=5;
+          this.tokens = tok;
           this.tokenFlag = (tok>0)?true:false;
         });
         this.subscribeservice.setHeader('Upload Images on Crowd Gathering');
@@ -64,6 +66,7 @@ export class UploadComponent implements OnInit {
           this.longitude = `${pos.lng}`;
         }).catch((err: any) => {
           this.errorMsg = true;
+          this.subscribeservice.setToken(this.tokens - 1);
           console.log(err);
         })
       }
@@ -94,7 +97,8 @@ export class UploadComponent implements OnInit {
         }
       }).catch((err: any) => {
         this.userloader = false;
-        this.router.navigate(['../heatmap'], { relativeTo: this.route }).catch();
+        this.errorMsg = true;
+        // this.router.navigate(['../heatmap'], { relativeTo: this.route }).catch();
         console.log(err);
       })
     } else {
